@@ -13,8 +13,8 @@ const Projects = () => {
     {
       title: "Portfolio Website",
       description: "A personal portfolio to showcase my projects and skills.",
-      githubLink: "https://github.com/KashishAgarwal0/portfolio",
-      demoLink: "https://KashishAgarwal0.github.io/portfolio/",
+      githubLink: "https://github.com/KashishAgarwal0/Myportfolio.git",
+      demoLink: "https://kashishagarwal.netlify.app/",
     },
     {
       title: "Weather App",
