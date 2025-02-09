@@ -1,5 +1,5 @@
 import React from "react";
-
+import image from '../assets/portfolio.jpg';
 const About = () => {
   return (
     <section id="about" className="py-16 bg-[#0A0A0A] text-white">
@@ -10,7 +10,7 @@ const About = () => {
           {/* Profile Image with Circle Background */}
           <div className="w-64 h-64 md:w-72 md:h-72 bg-gradient-to-br from-blue-700 to-blue-900 rounded-full flex items-center justify-center shadow-2xl">
             <img
-              src="src/assets/portfolio.jpg" // Update with actual image path
+              src={image} // Update with actual image path
               alt="Kashish Agarwal"
               className="w-60 h-60 md:w-68 md:h-68 object-cover rounded-full border-4 border-white"
             />
