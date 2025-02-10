@@ -2,32 +2,35 @@
 import React from "react";
 
 const Projects = () => {
-  // Manually added projects
+  // Manually added projects with preview images
   const projects = [
     {
       title: "Thapar Social Media App",
       description: "A social media platform with real-time messaging powered by Socket.IO.",
       githubLink: "https://github.com/KashishAgarwal0/TechThap1.git",
-      demoLink: "https://techthapnew.onrender.com/",
+      demoLink: "https://techthapnew.onrender.com/auth",
+      previewImage: "https://github.com/KashishAgarwal0/Website_previews/blob/main/techthap.png?raw=true", // Replace with actual image URL
     },
     {
       title: "Portfolio Website",
       description: "A personal portfolio to showcase my projects and skills.",
       githubLink: "https://github.com/KashishAgarwal0/Myportfolio.git",
       demoLink: "https://kashishagarwal.netlify.app/",
+      previewImage: "https://github.com/KashishAgarwal0/Website_previews/blob/main/portfolio.png?raw=true", // Replace with actual image URL
     },
     {
       title: "Weather App",
       description: "A weather forecasting app using OpenWeather API.",
       githubLink: "https://github.com/KashishAgarwal0/Weathery-API.git",
       demoLink: "https://wea-thery.netlify.app/",
+      previewImage: "https://github.com/KashishAgarwal0/Website_previews/blob/main/WEATHER.png?raw=true", // Replace with actual image URL
     },
-    
     {
       title: "Simon Game",
-      description: "A simple javascript based game where player has to keep track of the sequence.",
+      description: "A simple JavaScript-based game where the player has to keep track of the sequence.",
       githubLink: "https://github.com/KashishAgarwal0/TheSimon-Game.git",
       demoLink: "https://simon-who.netlify.app/",
+      previewImage: "https://github.com/KashishAgarwal0/Website_previews/blob/main/SIMON.png?raw=true", // Replace with actual image URL
     },
   ];
 
@@ -43,7 +46,12 @@ const Projects = () => {
               key={index}
               className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border"
             >
-              <h3 className="text-xl font-bold text-gray-800">{project.title}</h3>
+              <img 
+                src={project.previewImage} 
+                alt={project.title} 
+                className="w-full h-40 object-cover rounded-lg" 
+              />
+              <h3 className="mt-4 text-xl font-bold text-gray-800">{project.title}</h3>
               <p className="mt-2 text-gray-600">{project.description}</p>
               <div className="mt-4 flex justify-center space-x-4">
                 <a
