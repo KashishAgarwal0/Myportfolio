@@ -35,7 +35,7 @@ const Home = () => {
   <img
     src={image} // Update this path if needed
     alt="Animated Developer"
-    className="w-[400px] md:w-[500px] transition-transform duration-300 group-hover:animate-bounce"
+    className="w-[400px] md:w-[500px] transition-transform duration-20 group-hover:animate-bounce"
   />
 </div>
 

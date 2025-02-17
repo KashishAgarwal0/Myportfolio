@@ -1,38 +1,62 @@
+
+
 import React, { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaUser, FaProjectDiagram, FaEnvelope } from "react-icons/fa";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-gray-900 text-white fixed top-0 left-0 z-50">
-      <div className="max-w-7xl mx-auto px-5 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <div className="text-2xl font-bold">KA</div>
+    <nav className="w-full bg-gradient-to-r from-gray-900 to-gray-800 text-white fixed top-0 left-0 z-50 shadow-lg">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        {/* Logo with Rotation Animation */}
+        <div className="text-3xl font-extrabold tracking-wide text-cyan-300 transition-transform duration-500 hover:rotate-[360deg]">
+          KA
+        </div>
 
         {/* Desktop Nav Links */}
-        <ul className="hidden md:flex space-x-8">
-          <li><a href="#about" className="hover:text-blue-400">About</a></li>
-          <li><a href="#projects" className="hover:text-blue-400">Projects</a></li>
-          <li><a href="#contact" className="hover:text-blue-400">Contact</a></li>
+        <ul className="hidden lg:flex space-x-10 font-semibold text-lg">
+          <li className="flex items-center space-x-2 hover:scale-105 transition-transform">
+            <FaUser className="text-cyan-300" />
+            <a href="#about" className="hover:text-cyan-300 transition duration-300">About</a>
+          </li>
+          <li className="flex items-center space-x-2 hover:scale-105 transition-transform">
+            <FaProjectDiagram className="text-cyan-300" />
+            <a href="#projects" className="hover:text-cyan-300 transition duration-300">Projects</a>
+          </li>
+          <li className="flex items-center space-x-2 hover:scale-105 transition-transform">
+            <FaEnvelope className="text-cyan-300" />
+            <a href="#contact" className="hover:text-cyan-300 transition duration-300">Contact</a>
+          </li>
         </ul>
 
         {/* Mobile Menu Icon */}
-        <div className="md:hidden cursor-pointer" onClick={() => setMenuOpen(!menuOpen)}>
-          {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+        <div className="lg:hidden cursor-pointer text-cyan-300" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
         </div>
       </div>
 
       {/* Mobile Menu */}
-      <ul
-        className={`absolute w-full bg-gray-800 flex flex-col items-center py-5 space-y-5 transition-all duration-300 ${
-          menuOpen ? "top-16 opacity-100" : "top-[-250px] opacity-0"
-        } md:hidden`}
+      <div
+        className={`absolute w-full bg-gray-800 flex flex-col items-center py-6 space-y-6 transition-transform duration-300 ${
+          menuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
+        } lg:hidden font-semibold text-lg`}
       >
-        <li><a href="#about" className="hover:text-yellow-400" onClick={() => setMenuOpen(false)}>About</a></li>
-        <li><a href="#projects" className="hover:text-yellow-400" onClick={() => setMenuOpen(false)}>Projects</a></li>
-        <li><a href="#contact" className="hover:text-yellow-400" onClick={() => setMenuOpen(false)}>Contact</a></li>
-      </ul>
+        <ul className="flex flex-col items-center space-y-5">
+          <li className="flex items-center space-x-3 hover:scale-105 transition-transform">
+            <FaUser className="text-cyan-300" />
+            <a href="#about" className="hover:text-cyan-300 transition duration-300" onClick={() => setMenuOpen(false)}>About</a>
+          </li>
+          <li className="flex items-center space-x-3 hover:scale-105 transition-transform">
+            <FaProjectDiagram className="text-cyan-300" />
+            <a href="#projects" className="hover:text-cyan-300 transition duration-300" onClick={() => setMenuOpen(false)}>Projects</a>
+          </li>
+          <li className="flex items-center space-x-3 hover:scale-105 transition-transform">
+            <FaEnvelope className="text-cyan-300" />
+            <a href="#contact" className="hover:text-cyan-300 transition duration-300" onClick={() => setMenuOpen(false)}>Contact</a>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 };
