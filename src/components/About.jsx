@@ -84,7 +84,7 @@ const About = () => {
             <img
               src={image}
               alt="Kashish Agarwal"
-              className="w-60 h-60 md:w-68 md:h-68 object-cover rounded-full border-4 border-white transition-transform duration-500 group-hover:rotate-[360deg]"
+              className="w-60 h-60 md:w-68 md:h-68 object-cover rounded-full border-4 border-white "
             />
           </div>
 
